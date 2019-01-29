@@ -7,7 +7,7 @@ node (env.JENKINS_WORKER){
   stage('SonarQube analysis') {
     // requires SonarQube Scanner 2.8+
     //def scannerHome = tool 'SonarQube Scanner 2.8';
-    withSonarQubeEnv('ent_linux_slave') {
+    withSonarQubeEnv('sonar') {
       sh "/apps/sonar-scanner-2.7/bin/sonar-scanner -X"
     }
   }
