@@ -7,9 +7,11 @@ node (env.JENKINS_WORKER){
   stage('SonarQube analysis') {
     // requires SonarQube Scanner 2.8+
     //def scannerHome = tool 'SonarQube Scanner 2.8';
-    withSonarQubeEnv('sonar') {
-      sh "/apps/sonar-scanner-2.7/bin/sonar-scanner -X"
-    }
+    //withSonarQubeEnv('sonar') {
+      sh '''
+      /apps/sonar-scanner-2.7/bin/sonar-scanner -X
+      '''
+    //}
   }
 
   stage('Run Shell Script')
